@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">La Guarida 🐺</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirm Study Room</a></li>
+            <li><a routerLink="/app-disponible" routerLinkActive="active">Study Room Available</a></li>
+            <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Create Reservation</a></li>
+            <li><a routerLink="">Log Out</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
+
+<label class="admin">Administrador: {{admin}}</label>
+<h2 style="padding-left: 15px;">Study Room Available</h2>
+
+<br>
+<form>
+  <label>Search by date</label>
+  <input type="date" name="dateDesired" [(ngModel)]="dateDesired">
+  <button class="btn btn-sm btn-default" (click)="search()">Search</button>
+</form>
+
+
+<table class="table table-bordered" align="center">
+  <tr>
+    <th>Salon</th>
+    <th>Piso</th>
+    <th>Content</th>
+    <th>Available Interval</th>
+    <th>Create Reservation</th>
+  </tr>
+  <tr *ngFor="let res of available">
+    <td>
+      {{res.salon}}
+    </td>
+    <td>
+      {{res.piso}}
+    </td>
+    <td>
+      {{res.content}}
+    </td>
+    <td>
+      {{res.timeAvailable}}
+    </td>
+    <td>
+      <button class="btn btn-primary" routerLink="/app-crear-reserva" routerLinkActive="active">{{res.Status}}</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,19 @@
+<h2>Reserva Lobo 🐺</h2>
+
+<form>
+  <form action="">
+  <div class="imgcontainer">
+    <img src="images/UPRA_seal.png" alt="UPRA" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname"[(ngModel)]="enteredUser" id="enteredUser" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="enteredPass" id="enteredPass" required>
+        
+    <button class="btn btn-primary" (click)="checkInfo()" routerLink="{{link}}" routerLinkActive="{{activeLink}}">Login</button>
+   <!-- <button class="btn btn-default" (click)="postInfo()">POST</button> -->
+  </div>
+</form>

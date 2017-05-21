@@ -1,10 +1,10 @@
-import { ReservasUPRAPage } from './app.po';
+import { ReservasUpraPage } from './app.po';
 
 describe('reservas-upra App', function() {
-  let page: ReservasUPRAPage;
+  let page: ReservasUpraPage;
 
   beforeEach(() => {
-    page = new ReservasUPRAPage();
+    page = new ReservasUpraPage();
   });
 
   it('should display message saying app works', () => {

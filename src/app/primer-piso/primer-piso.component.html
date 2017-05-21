@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <!-- Second navbar for categories -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">La Guarida 🐺</a>
+      </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirm Study Room</a></li>
+            <li><a routerLink="/app-disponible" routerLinkActive="active">Study Room Available</a></li>
+            <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Create Reservation</a></li>
+            <li><a routerLink="">Log Out</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
+
+<label class="admin">Administrador: {{admin}}</label>
+<h2 style="padding-left: 15px;">Salones de Estudio</h2>
+
+<table class="tablestyle" align="center">
+  <tr>
+    <td><button class="btn btn-default" (click)="firstRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #1</button></td>
+    <td><button class="btn btn-default" (click)="secondRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #2</button></td> 
+    <td><button class="btn btn-default" (click)="thirdRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #3</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-default" (click)="fourthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #4</button></td>
+    <td><button class="btn btn-default" (click)="fifthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #5</button></td> 
+    <td><button class="btn btn-default" (click)="sixthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #6</button></td>
+  </tr>
+</table>
+
+<br>
+<hr>
+
+<form id="filter">
+  <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search by ID" name="term" [(ngModel)]="term">
+  </div>
+</form>
+
+<table class="table table-bordered" style="text-align: center;">
+  <tr>
+    <td *ngFor="let res of reservationHeader" style="font-weight:bold;">
+      {{res}}
+    </td>
+  </tr>
+  <tr *ngFor="let reservationData of reservas | filterID: term; let i=index"> <!--Me permite tener multiples filas de la tabla, las filas son generadas con el largo del arreglo-->
+    <td>
+      {{reservationData.id}}
+    </td>
+    <td>
+      {{reservationData.nombre}}
+    </td>
+    <td>
+      {{reservationData.horaEntrada}}
+    </td>
+    <td>
+      {{reservationData.horaSalida}}
+    </td>
+    <td>
+      {{reservationData.cantEstudiantes}}
+    </td>
+     <td>
+      {{reservationData.piso}}
+    </td>
+    <td>
+      {{reservationData.numSalon}}
+    </td>
+    <td>
+      <button class="{{reservationData.style}}" (click)="setStatus(reservationData._id)">{{reservationData.Status}}</button>
+    </td>
+  </tr>
+</table>
+
+
