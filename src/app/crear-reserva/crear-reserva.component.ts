@@ -22,6 +22,9 @@ export class CrearReservaComponent implements OnInit {
   public exitHour: string;
   public resDate: string;
 
+  router;
+  isActive;
+
 
   constructor(private reservaService: ReservasService) {
     this.reservaService.getReservas().subscribe(reservations => {
@@ -52,14 +55,14 @@ export class CrearReservaComponent implements OnInit {
         "style": "btn btn-success",
         "piso": this.floorNumber
       };
-
+      
       this.reservaService.addReserva(reservation)
         .subscribe(res => {
           this.reservations.push(res);
           console.log(this.reservations);
         });
 
-      alert("Reservation has been created");
+        alert("Reservation Completed");
     }
   }
 

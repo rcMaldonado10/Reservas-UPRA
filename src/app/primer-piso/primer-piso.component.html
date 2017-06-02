@@ -14,7 +14,6 @@
             <li><a routerLink="/app-disponible" routerLinkActive="active">Study Room Available</a></li>
             <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Create Reservation</a></li>
             <li><a routerLink="">Log Out</a></li>
-
           </ul>
         </div>
       </div>
@@ -23,23 +22,7 @@
 
 <label class="admin">Administrador: {{admin}}</label>
 <h2 style="padding-left: 15px;">Salones de Estudio</h2>
-
-<table class="tablestyle" align="center">
-  <tr>
-    <td><button class="btn btn-default" (click)="firstRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #1</button></td>
-    <td><button class="btn btn-default" (click)="secondRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #2</button></td> 
-    <td><button class="btn btn-default" (click)="thirdRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #3</button></td>
-  </tr>
-  <tr>
-    <td><button class="btn btn-default" (click)="fourthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #4</button></td>
-    <td><button class="btn btn-default" (click)="fifthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #5</button></td> 
-    <td><button class="btn btn-default" (click)="sixthRoom()"><img src="images/table.png" width="75" height="75"/><br>Salon #6</button></td>
-  </tr>
-</table>
-
 <br>
-<hr>
-
 <form id="filter">
   <div class="form-group">
       <input type="text" class="form-control" placeholder="Search by ID" name="term" [(ngModel)]="term">

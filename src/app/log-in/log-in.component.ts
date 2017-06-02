@@ -38,11 +38,8 @@ export class LogInComponent {
     }
   }
 
-  /*postInfo(){
+  postInfo(){
 
-    console.log("post");
-    this.adminService.postAdmin().subscribe(demoDb => {
-
-    });
-  }*/
+    console.log("hola");
+  }
 }

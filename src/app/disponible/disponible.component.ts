@@ -26,31 +26,51 @@ export class DisponibleComponent implements OnInit {
 
   ngOnInit() { }
 
+  //La funcion search() esta hecha para buscar los espacios disponibles en una reserva 
+  //que este hecha, esta compara la hora de salida de una y la hora de entrada de la
+  //otra para ver si hay una diferencia, ya que si la hay entonces hay un espacio
+  //disponible en estas reservas. De no haber una reserva entonces indica que esta
+  //disponible desde el "startingLimit" y el "endingLimit".
+
   search() {
     var resHour;//Toma la primera reserva que hay en la coleccion de reserva
     var nextResHour;//Toma la proxima reserva de la coleccion
-    var floor = "1";
-    var room = this.getFloorAndRoom(floor);
-    var roomRes;
+    var floor = "1";//Indica el piso en el que estamos
+    var room = this.getFloorAndRoom(floor); //Devuelve cuantos salones hay dependiendo de el piso
+    var roomRes;//Recibe un arreglo en donde el piso, el salon y la fecha de reservas es el mismo
     var flag = false;
     var floorAndRoom;
     var nextFloorAndRoom;
-    var primerDigito;
-    var segundoDigito;
-    var diff;
+    var primerDigito;//obtiene el primer digito de la primera reserva en el arreglo
+    var segundoDigito;//obtiene el segundo digito de la primer reserva en el arreglo
+    var diff;//Diferencia de las reservas, si hay diferencia entonces hay un tiempo disponible
+    var startingLimit = "8:00";//Limite en donde empiezan las reservas
+    var endingLimit = "21:00";//Limite en donde terminan las reservas
 
     for (var j = 0; j < room.length; j++) {
       roomRes = this.sortByRoom(room[j], floor);
+      if(roomRes[j] == undefined){
+        console.log("nada");
+        this.available.push({
+          "salon": room[j],
+          "piso": floor,
+          "content": "algo",
+          "timeAvailable": startingLimit + " - " + endingLimit,
+          "Status": "Go"
+        });
+      }
       for (var i = 0; i < roomRes.length - 1; i++) {
+        //En estas dos lineas de codigo verifico que el piso y el salon de una reserva sea el mismo
+        //para entonces tomar las reservas de eso salones
         floorAndRoom = roomRes[i].piso == floor && roomRes[i].numSalon == room[j];
         nextFloorAndRoom = roomRes[i + 1].piso == floor && roomRes[i + 1].numSalon == room[j];
 
         if (floorAndRoom) {
-          primerDigito = roomRes[i].horaSalida.charAt(0);
-          segundoDigito = roomRes[i].horaSalida.charAt(1);
-          console.log(primerDigito + " primero");
-          console.log(segundoDigito + " segundo");
+          primerDigito = roomRes[i].horaSalida.charAt(0);//Tomo el primer digito de la hora
+          segundoDigito = roomRes[i].horaSalida.charAt(1);//Tomo el segundo digita de la hora
 
+          //resHour toma la hora de salida de una reserva para entonces compararla
+          //con la hora de la proxima reserva
           resHour = +(primerDigito + segundoDigito);//De string los convierto a number
 
           console.log(resHour + "la hora" + i);
@@ -127,7 +147,6 @@ export class DisponibleComponent implements OnInit {
               "Status": "Go"
             });
             console.log(this.available)
-
           } else {
             console.log(diff + "hola");
           }
@@ -164,7 +183,9 @@ export class DisponibleComponent implements OnInit {
         resByRoom.push(this.reservas[i]);
       }
     }
-    console.log(resByRoom + "salon");
+    for(var i = 0; i < resByRoom.length; i++){
+      
+    }
     return resByRoom;
   }
 
