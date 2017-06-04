@@ -10,10 +10,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirm Study Room</a></li>
-            <li><a routerLink="/app-disponible" routerLinkActive="active">Study Room Available</a></li>
-            <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Create Reservation</a></li>
-            <li><a routerLink="">Log Out</a></li>
+            <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirmar Reserva</a></li>
+            <li><a routerLink="/app-disponible" routerLinkActive="active">Salones Disponibles</a></li>
+            <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Crear Reserva</a></li>
+            <li><a routerLink="">Desconectarse</a></li>
           </ul>
         </div>
       </div>
@@ -25,7 +25,7 @@
 <br>
 <form id="filter">
   <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search by ID" name="term" [(ngModel)]="term">
+      <input type="text" class="form-control" placeholder="Busque por ID" name="term" [(ngModel)]="term">
   </div>
 </form>
 
@@ -56,6 +56,9 @@
     </td>
     <td>
       {{reservationData.numSalon}}
+    </td>
+    <td>
+      {{reservationData.fecha}}
     </td>
     <td>
       <button class="{{reservationData.style}}" (click)="setStatus(reservationData._id)">{{reservationData.Status}}</button>

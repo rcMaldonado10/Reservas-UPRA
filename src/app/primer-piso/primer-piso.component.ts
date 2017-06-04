@@ -10,13 +10,12 @@ import { Reservas } from '../../Reservas';
 })
 export class PrimerPisoComponent {
 
-  reservas: Reservas[]; //arreglo que recibe la informacion de la base de datos
-
+  public reservas: Reservas[]; //arreglo que recibe la informacion de la base de datos
 
 
   admin="Rafael E. Colon Maldonado";
 
-  reservationHeader: string[] = ["ID", "Nombre", "Hora Reservada", "Hora de Salida", "Cant. Est.", "Piso", "Salon", "Reserva"];  
+  reservationHeader: string[] = ["ID", "Nombre", "Hora Reservada", "Hora de Salida", "Cant. Est.", "Piso", "Salon","Fecha", "Reserva"];  
 
 
   constructor(private reservasService: ReservasService) { 

@@ -1,4 +1,4 @@
-<h2>Reserva Lobo 🐺</h2>
+<h2>La Guarida 🐺</h2>
 
 <form>
   <form action="">
@@ -7,13 +7,12 @@
   </div>
 
   <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname"[(ngModel)]="enteredUser" id="enteredUser" required>
+    <label><b>Nombre de usario</b></label>
+    <input type="text" placeholder="Entre el nombre de usario" name="uname"[(ngModel)]="enteredUser" id="enteredUser" required>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="enteredPass" id="enteredPass" required>
+    <label><b>Contraseña</b></label>
+    <input type="password" placeholder="Entre la contraseña" name="psw" [(ngModel)]="enteredPass" id="enteredPass" required>
         
-    <button class="btn btn-primary" (click)="checkInfo()" routerLink="{{link}}" routerLinkActive="{{activeLink}}">Login</button>
-    <button class="btn btn-default" (click)="postInfo()">POST</button>
+    <button class="btn btn-primary" (click)="checkInfo()" routerLink="{{link}}" routerLinkActive="{{activeLink}}">Conectarse</button>
   </div>
 </form>

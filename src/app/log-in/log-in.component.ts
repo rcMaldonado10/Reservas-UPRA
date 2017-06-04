@@ -37,9 +37,4 @@ export class LogInComponent {
         }    
     }
   }
-
-  postInfo(){
-
-    console.log("hola");
-  }
 }

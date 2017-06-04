@@ -16,11 +16,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirm Study Room</a></li>
-                    <li><a routerLink="/app-disponible" routerLinkActive="active">Study Room Available</a></li>
-                    <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Create Reservation</a></li>
-                    <li><a routerLink="">Log Out</a></li>
-
+                    <li><a routerLink="/app-primer-piso" routerLinkActive="active">Confirmar Reserva</a></li>
+                    <li><a routerLink="/app-disponible" routerLinkActive="active">Salones Disponibles</a></li>
+                    <li><a routerLink="/app-crear-reserva" routerLinkActive="active">Crear Reserva</a></li>
+                    <li><a routerLink="">Desconectarse</a></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +31,7 @@
     <div style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <div class="panel-title">Create Reservation</div>
+                <div class="panel-title">Crear Reserva</div>
             </div>
             <div class="panel-body">
                 <form>
@@ -40,86 +39,86 @@
                         <div class="form-group required">
                             <label class="control-label col-md-4  requiredField">ID</label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md  textinput textInput form-control" maxlength="30" name="id" [(ngModel)]="id" placeholder="Enter Student ID"
+                                <input class="input-md  textinput textInput form-control" maxlength="30" name="id" [(ngModel)]="id" placeholder="Entre el ID del estudiante"
                                     style="margin-bottom: 10px" type="text" />
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label col-md-4  requiredField">Name</label>
+                            <label class="control-label col-md-4  requiredField">Nombre</label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md  textinput textInput form-control" maxlength="30" name="name" [(ngModel)]="name" placeholder="Enter Student Name"
+                                <input class="input-md  textinput textInput form-control" maxlength="30" name="name" [(ngModel)]="name" placeholder="Entre el nombre del estudiante"
                                     style="margin-bottom: 10px" type="text" />
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label col-md-4 requiredField">Departament</label>
+                            <label class="control-label col-md-4 requiredField">Departamento</label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md emailinput form-control" name="departament" [(ngModel)]="department" placeholder="Enter Student Departament"
+                                <input class="input-md emailinput form-control" name="departament" [(ngModel)]="department" placeholder="Entre el departamento del estudiante"
                                     style="margin-bottom: 10px" type="email" />
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label col-md-4  requiredField">Quantity of Students</label>
+                            <label class="control-label col-md-4  requiredField">Cantidad de Estudiantes</label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md textinput textInput form-control" name="quantityStudents" [(ngModel)]="quantityStudents" placeholder="Enter the Quantity"
+                                <input class="input-md textinput textInput form-control" name="quantityStudents" [(ngModel)]="quantityStudents" placeholder="Entre la cantidad"
                                     style="margin-bottom: 10px" type="text" />
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label col-md-4  requiredField">Floor Number</label>
+                            <label class="control-label col-md-4  requiredField">Numero de Piso</label>
                             <div class="controls col-md-8 ">
                                 <!--<input class="input-md textinput textInput form-control" name="roomNumber" [(ngModel)]="roomNumber" placeholder="Select Room Number" style="margin-bottom: 10px" type="text" /> -->
 
-                                <select class="selectpicker form-control" name="floorNumber" [(ngModel)]="floorNumber">
+                                <select class="selectpicker form-control" name="floorNumber" [(ngModel)]="floorNumber" placeholder="Elija el nuemro de piso">
                                     <option>1</option>
                                     <option>2</option>
                                 </select>
                             </div>
                         </div>
-                            <div class="form-group required">
-                                <label class="control-label col-md-4  requiredField">Room Number</label>
-                                <div class="controls col-md-8 ">
-                                    <!--<input class="input-md textinput textInput form-control" name="roomNumber" [(ngModel)]="roomNumber" placeholder="Select Room Number" style="margin-bottom: 10px" type="text" /> -->
+                        <div class="form-group required">
+                            <label class="control-label col-md-4  requiredField">Numero del Salón</label>
+                            <div class="controls col-md-8 ">
+                                <!--<input class="input-md textinput textInput form-control" name="roomNumber" [(ngModel)]="roomNumber" placeholder="Select Room Number" style="margin-bottom: 10px" type="text" /> -->
 
-                                    <select class="selectpicker form-control" name="roomNumber" [(ngModel)]="roomNumber">
+                                <select class="selectpicker form-control" name="roomNumber" [(ngModel)]="roomNumber">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                 </select>
-                                </div>
                             </div>
-                            <div class="form-group required">
-                                <label class="control-label col-md-4  requiredField">Entered Hour</label>
-                                <div class="controls col-md-8 ">
-                                    <input class="input-md textinput textInput form-control" name="enteredHour" [(ngModel)]="enteredHour" style="margin-bottom: 10px"
-                                        type="time" />
-                                </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label col-md-4  requiredField">Hora a Entrar</label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" name="enteredHour" [(ngModel)]="enteredHour" style="margin-bottom: 10px"
+                                    type="time" />
                             </div>
-                            <div class="form-group required">
-                                <label class="control-label col-md-4  requiredField">Exit Hour</label>
-                                <div class="controls col-md-8 ">
-                                    <input class="input-md textinput textInput form-control" name="exitHour" [(ngModel)]="exitHour" style="margin-bottom: 10px"
-                                        type="time" />
-                                </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label col-md-4  requiredField">Hora a Salir</label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" name="exitHour" [(ngModel)]="exitHour" style="margin-bottom: 10px"
+                                    type="time" />
                             </div>
-                            <div class="form-group required">
-                                <label class="control-label col-md-4  requiredField">Date</label>
-                                <div class="controls col-md-8 ">
-                                    <input class="input-md textinput textInput form-control" name="resDate" [(ngModel)]="resDate" style="margin-bottom: 10px"
-                                        type="date" />
-                                </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label col-md-4  requiredField">Fecha</label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" name="resDate" [(ngModel)]="resDate" style="margin-bottom: 10px"
+                                    type="date" />
                             </div>
-                            <div class="form-group">
-                                <div class="aab controls col-md-4 "></div>
-                                <div class="controls col-md-8 ">
-                                    <button class="btn btn btn-primary" (click)="reservar()">Reservar</button>
-                                    <button class="btn btn-default" (click)="log()">Log</button>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-8 ">
+                                <button class="btn btn btn-primary" (click)="reservar()">Reservar</button>
+                                <button class="btn btn-default" (click)="log()">Log</button>
                             </div>
+                        </div>
                     </form>
 
                 </form>
-                </div>
             </div>
         </div>
     </div>
+</div>
